@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './App.css'
 
 export class App extends Component {
   constructor(props){
@@ -19,7 +20,7 @@ export class App extends Component {
 
   }
   handleResetClick(){
-    
+
   }
 
 
@@ -27,6 +28,7 @@ export class App extends Component {
   render() {
     return (
       <div>
+        <h1>0:00</h1>
         <button>Start</button>
         <button>Pause</button>
         <button>Reset</button>
