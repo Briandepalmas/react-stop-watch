@@ -10,6 +10,11 @@ export class App extends Component {
                 minutes: 0,
                 pause: false
     }
+    this.timer=this.timer.bind(this)
+    this.handleStartClick=this.handleStartClick.bind(this)
+    this.handlePauseClick=this.handlePauseClick.bind(this)
+    this.handleResetClick=this.handleResetClick.bind(this)
+    
   }
 
   handleStartClick(){
@@ -17,16 +22,33 @@ export class App extends Component {
     this.startTimer=setInterval(this.timer,1000)
       
   }
+  
   timer(){
-
-    this.setState({seconds: this.state.seconds + 1})
+    if (this.state.pause==false){
+        this.setState({seconds: this.state.seconds + 1})
+      }   
   }
-
+ 
+ 
+   
   handlePauseClick(){
-
+    //switches the pause boolean between true and false onclick
+    this.setState(pauseSwitch => ({pause: !pauseSwitch.pause}));
+   
+  if (this.state.pause==true){
+      clearInterval(this.startTimer)
+      }
+      else {
+        this.startTimer=setInterval(this.timer,1000)
+      }
+  
   }
+  
+  
+  
   handleResetClick(){
-
+    this.setState({seconds: 0});
+    clearInterval(this.timer);
   }
 
 
