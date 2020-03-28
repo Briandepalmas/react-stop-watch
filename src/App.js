@@ -8,10 +8,22 @@ export class App extends Component {
                 seconds: 0,
                 minutes: 0,
                 pause: false
-
     }
+  }
+
+  handleStartClick(){
+      
+  }
+
+  handlePauseClick(){
 
   }
+  handleResetClick(){
+    
+  }
+
+
+
   render() {
     return (
       <div>
